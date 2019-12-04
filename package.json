@@ -1,0 +1,47 @@
+{
+	"name": "react-native-login-using-keycloak",
+	"version": "1.0.2",
+	"description": "React Native module for authentication between a client and the keycloak server.",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mahomahoxd/react-native-login-keycloak.git"
+	},
+	"keywords": [
+		"auth",
+		"login",
+		"keycloak",
+		"facebook",
+		"google",
+		"oauth",
+		"social",
+		"openid"
+	],
+	"author": [
+		"Sachin Khedkar",
+		"Anu Bhat"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mahomahoxd/react-native-login-keycloak/issues"
+	},
+	"homepage": "https://github.com/mahomahoxd/react-native-login-keycloak#readme",
+	"dependencies": {
+		"base-64": "^0.1.0",
+		"eslint-plugin-react": "^7.5.1",
+		"query-string": "^5.0.1",
+		"uuid": "^3.1.0"
+	},
+	"devDependencies": {
+		"babel-eslint": "^8.0.3",
+		"eslint": "^4.13.1",
+		"eslint-config-airbnb": "^16.1.0",
+		"eslint-plugin-import": "^2.8.0",
+		"eslint-plugin-jsx-a11y": "^6.0.3",
+		"eslint-plugin-react": "^7.5.1",
+		"eslint-plugin-react-native": "^3.2.0"
+	}
+}
