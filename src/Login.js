@@ -5,6 +5,7 @@ import uuidv4 from "uuid/v4"
 import RCTSFSafariViewController from "react-native-sfsafariviewcontroller"
 import { Actions } from "react-native-router-flux"
 import { Platform } from "react-native"
+import InAppBrowser from "react-native-inappbrowser-reborn"
 
 export class Login {
 	state
@@ -50,9 +51,12 @@ export class Login {
 				reject,
 				state
 			}
-			idpRequest === true
+			/*idpRequest === true
 				? Linking.openURL(url)
-				: Actions.loginForm({ url: url })
+				: Actions.loginForm({ url: url })*/
+
+							idpRequest === true ? Linking.openURL(url) : InAppBrowser.openAuth(url, { readerMode: true,}).then((response) =>response.type === 'success' && response.url ? Linking.openURL(response.url) : console.log('error'))
+
 		})
 	}
 
@@ -95,7 +99,7 @@ export class Login {
 	onOpenURL(event) {
 		console.log(
 			"-------------------------------" +
-				JSON.stringify(event)
+			JSON.stringify(event)
 		)
 		if (
 			event.url.includes("#state") === true
@@ -120,7 +124,7 @@ export class Login {
 
 			console.log(
 				"got response " +
-					JSON.stringify(event)
+				JSON.stringify(event)
 			)
 		}
 	}
@@ -219,8 +223,8 @@ export class Login {
 		const slash = url.endsWith("/") ? "" : "/"
 		return `${url +
 			slash}realms/${encodeURIComponent(
-			realm
-		)}`
+				realm
+			)}`
 	}
 
 	getLoginURL() {
