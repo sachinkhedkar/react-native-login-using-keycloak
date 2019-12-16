@@ -39,6 +39,10 @@ export class Login {
 	}
 
 	startLoginProcess(conf, idpRequest = false) {
+
+		if(conf) {
+			this.conf = conf
+		}
 		this.setConf(conf)
 		return new Promise((resolve, reject) => {
 			const {
@@ -54,9 +58,8 @@ export class Login {
 			/*idpRequest === true
 				? Linking.openURL(url)
 				: Actions.loginForm({ url: url })*/
-
-							idpRequest === true ? Linking.openURL(url) : InAppBrowser.openAuth(url, { readerMode: true,}).then((response) =>response.type === 'success' && response.url ? Linking.openURL(response.url) : console.log('error'))
-
+				idpRequest === true ? Linking.openURL(url) : InAppBrowser.openAuth(url, { readerMode: true,}).then((response) =>response.type === 'success' && response.url ? Linking.openURL(response.url) : console.log('error'))
+				idpRequest === true ? Linking.openURL(url) : Actions.loginForm({ url: url });
 		})
 	}
 
