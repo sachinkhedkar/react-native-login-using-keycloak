@@ -6,6 +6,8 @@ import RCTSFSafariViewController from "react-native-sfsafariviewcontroller"
 import { Actions } from "react-native-router-flux"
 import { Platform } from "react-native"
 import InAppBrowser from "react-native-inappbrowser-reborn"
+import AsyncStorage from '@react-native-community/async-storage';
+
 
 export class Login {
 	state
@@ -55,7 +57,9 @@ export class Login {
 				reject,
 				state
 			}
-			 idpRequest === true ? Linking.openURL(url) : Actions.loginForm({ url: url });
+			idpRequest === true ? Linking.openURL(url) : Actions.loginForm({ url: url });
+			idpRequest === true ? 	AsyncStorage.setItem('logingType', 'idp') : AsyncStorage.setItem('logingType', 'mobileLogin'); 
+
 		})
 	}
 

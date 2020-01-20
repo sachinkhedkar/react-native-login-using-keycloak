@@ -1,6 +1,6 @@
 {
 	"name": "react-native-login-using-keycloak",
-	"version": "1.0.4",
+	"version": "2.0.0",
 	"description": "React Native module for authentication between a client and the keycloak server.",
 	"main": "src/index.js",
 	"scripts": {
@@ -21,8 +21,7 @@
 		"openid"
 	],
 	"author": [
-		"Sachin Khedkar",
-		"Anu Bhat"
+		"Sachin Khedkar"
 	],
 	"license": "MIT",
 	"bugs": {
